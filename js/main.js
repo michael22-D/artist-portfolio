@@ -73,6 +73,7 @@ const artworkData = [
     availability: 'Available for enquiry',
     alt: 'Dark, energetic abstract painting with a field of gestural marks and layered colour'
   }
+  
 ];
 
 const getArtworkById = (id) => artworkData.find((artwork) => artwork.id === id);
