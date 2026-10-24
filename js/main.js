@@ -72,8 +72,43 @@ const artworkData = [
     category: 'Abstract Figures',
     availability: 'Available for enquiry',
     alt: 'Dark, energetic abstract painting with a field of gestural marks and layered colour'
+  },
+  {
+    id: 'artwork-07',
+    title: 'Texture Study 07',
+    image: 'img/14.jpeg',
+    description: 'A close-up study of weathered metal, rust, and layered blue paint.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Weathered blue metal covered with layered rust marks and textures'
+  },
+  {
+    id: 'artwork-08',
+    title: 'Texture Study 08',
+    image: 'img/344.jpeg',
+    description: 'A close-up study of rust and peeling paint on a weathered metal surface.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Close-up of a rusted metal post against a warm, neutral wall'
+  },
+  {
+    id: 'artwork-09',
+    title: 'Texture Study 09',
+    image: 'img/whatsapp-texture-study.jpeg',
+    description: 'A close-up study of rust and peeling paint on a weathered metal surface.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Close-up of a weathered metal post with rust against a warm, neutral wall'
   }
-  
 ];
 
 const getArtworkById = (id) => artworkData.find((artwork) => artwork.id === id);

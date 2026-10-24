@@ -30,7 +30,7 @@ Work completed
 
 Content notes
 -------------
-- Artwork records currently contain six sample works. Update the artworkData collection in js/main.js with final titles, descriptions, materials, dimensions, and dates.
+- Artwork records currently contain nine works, including three texture studies with placeholder titles and unspecified dimensions and dates. Update the artworkData collection in js/main.js with artist-approved titles, descriptions, materials, dimensions, and dates.
 - Sample artwork descriptions are placeholders and should be replaced with artist-approved descriptions.
 - The contact form does not send data to a server. It validates the fields and opens the visitor's email application with a prepared message.
 - Confirm the contact email and all sample artwork details before publishing.
