@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Michael Denso about artwork availability, commissions, and international enquiries."
+    />
+    <title>Contact | Michael Denso</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Michael Denso home page">
+          <span class="brand-name">Michael Denso</span>
+          <span class="brand-subtitle">ABSTRACT ARTIST</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="mailto:michaeldenso@gmail.com" class="nav-email" aria-label="Email Michael Denso">✉</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-section contact-section">
+        <div class="container contact-wrap">
+          <div class="contact-copy">
+            <p class="section-kicker">Get in Touch</p>
+            <h1>Get in Touch</h1>
+            <p>
+              I welcome artwork enquiries, private collectors, and professional collaborations.
+              Please share your details below and I will be happy to respond by email.
+            </p>
+            <p class="contact-email-label">Email</p>
+            <a href="mailto:michaeldenso@gmail.com" class="contact-email">michaeldenso@gmail.com</a>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-summary hidden" id="formSummary" aria-live="polite"></div>
+
+            <div class="field-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" />
+              <p class="field-error" id="nameError" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+              <p class="field-error" id="emailError" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" autocomplete="off" />
+              <p class="field-error" id="subjectError" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6"></textarea>
+              <p class="field-error" id="messageError" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="send-note">After validation, your email application will open with a prepared message. Please send it from your email app to complete your enquiry.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-name">Michael Denso</p>
+          <p class="footer-subtitle">ABSTRACT ARTIST</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="mailto:michaeldenso@gmail.com">Email</a>
+        </div>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Facebook">◌</a>
+          <a href="#" aria-label="Mail">✉</a>
+        </div>
+      </div>
+      <div class="container footer-meta">
+        <p>© 2025 Michael Denso. All rights reserved.</p>
+        <p>All artwork belongs to the artist.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
