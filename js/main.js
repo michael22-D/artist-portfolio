@@ -1,38 +1,38 @@
-const artistEmail = 'michaeldenso@gmail.com';
+const artistEmail = '34feetart@gmail.com';
 
 const artworkData = [
   {
     id: 'artwork-01',
-    title: 'Untitled Study 01',
-    image: 'img/2.jpeg',
-    description: 'Placeholder description for this sample abstract work. Update this text with the artist’s written notes when available.',
-    medium: 'Acrylic on canvas',
-    dimensions: '100 x 80 cm',
-    year: '2024',
+    title: 'Drift of Echoes',
+    image: 'img/drift-of-echoes.jpeg',
+    description: 'An abstract mixed-media investigation of movement, memory, and traces left by human activity.',
+    medium: 'Acrylic on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
     category: 'Abstract Figures',
     availability: 'Available for enquiry',
-    alt: 'Abstract painting in blue and teal tones with expressive gestural marks'
+    alt: 'Blue and turquoise abstract painting with energetic gestural marks'
   },
   {
     id: 'artwork-02',
-    title: 'Untitled Study 02',
-    image: 'img/3.jpeg',
-    description: 'Placeholder description for this sample abstract work. Update this text with the artist’s written notes when available.',
-    medium: 'Acrylic on canvas',
-    dimensions: '100 x 80 cm',
-    year: '2024',
+    title: 'Endless Transit',
+    image: 'img/endless-transit.jpeg',
+    description: 'Layered gestures and marks transform the canvas into a record of passing bodies, motion, and time.',
+    medium: 'Mixed Media on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
     category: 'Colour Studies',
     availability: 'Available for enquiry',
-    alt: 'Abstract painting featuring layered green, blue, and violet colour fields'
+    alt: 'Green, blue, and ochre abstract painting with layered human-like marks'
   },
   {
     id: 'artwork-03',
-    title: 'Untitled Study 03',
-    image: 'img/4.jpeg',
-    description: 'Placeholder description for this sample abstract work. Update this text with the artist’s written notes when available.',
-    medium: 'Mixed media on canvas',
-    dimensions: '120 x 100 cm',
-    year: '2024',
+    title: 'Rising Chorus',
+    image: 'img/rising-chorus.jpeg',
+    description: 'Accumulated colour and expressive linework suggest collective voices, shared memory, and presence.',
+    medium: 'Acrylic on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
     category: 'Mixed Media',
     availability: 'Available for enquiry',
     alt: 'Mixed media abstract painting with bold textures and warm and cool tones'

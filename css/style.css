@@ -211,8 +211,8 @@ body[data-page="home"] .nav-toggle span {
 	overflow: hidden;
 	color: var(--white);
 	background-color: var(--green-dark);
-	background-image: url("../img/2.jpeg");
-	background-position: center 43%;
+	background-image: url("../img/landing-page-14.jpeg");
+	background-position: center 50%;
 	background-size: cover;
 }
 
@@ -813,6 +813,57 @@ body[data-page="home"] .nav-toggle span {
 	font-size: 13px;
 }
 
+.cv-grid {
+	display: grid;
+	grid-template-columns: 0.72fr 1.28fr;
+	gap: 52px;
+}
+
+.cv-profile {
+	align-self: start;
+	padding: 28px;
+	background: var(--green-dark);
+	color: var(--white);
+}
+
+.cv-profile h1 {
+	margin: 6px 0 12px;
+}
+
+.cv-profile p {
+	margin: 6px 0;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.cv-section {
+	padding: 22px 0;
+	border-top: 1px solid var(--line);
+}
+
+.cv-section:first-child {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.cv-section h2 {
+	margin: 0 0 14px;
+	font-size: 22px;
+}
+
+.cv-entry {
+	margin-bottom: 14px;
+}
+
+.cv-entry strong,
+.cv-entry span {
+	display: block;
+}
+
+.cv-entry span {
+	color: var(--muted);
+	font-size: 13px;
+}
+
 .about-actions {
 	display: flex;
 	flex-wrap: wrap;
@@ -1079,7 +1130,8 @@ body[data-page="home"] .nav-toggle span {
 	.intro-layout,
 	.about-grid,
 	.contact-wrap,
-	.artwork-layout {
+	.artwork-layout,
+	.cv-grid {
 		grid-template-columns: 1fr;
 	}
 
