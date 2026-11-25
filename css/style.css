@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+/* Shared design tokens keep colors, typography, spacing, and transitions consistent. */
 :root {
 	--paper: #f7f5f0;
 	--paper-deep: #eeeae2;
@@ -16,6 +17,7 @@
 	--ease: 260ms ease;
 }
 
+/* Apply predictable sizing and baseline typography across every page. */
 *,
 *::before,
 *::after {
@@ -62,34 +64,35 @@ textarea {
 	display: none !important;
 }
 
+/* The inner header aligns the artist identity with desktop and mobile navigation. */
 .site-header {
 	position: relative;
 	z-index: 20;
-	background: var(--paper);
+	background: var(--white);
 	border-bottom: 1px solid rgba(23, 32, 30, 0.09);
 }
 
 body[data-page="home"] .site-header {
 	position: absolute;
 	inset: 0 0 auto;
-	border-bottom: 0;
-	color: var(--white);
-	background: transparent;
+	border-bottom: 1px solid var(--line);
+	color: var(--ink);
+	background: var(--white);
 }
 
 body[data-page="home"] .brand-subtitle,
 body[data-page="home"] .nav-link,
 body[data-page="home"] .nav-email {
-	color: var(--white);
+	color: var(--ink);
 }
 
 body[data-page="home"] .nav-email,
 body[data-page="home"] .nav-toggle {
-	border-color: rgba(255, 255, 255, 0.45);
+	border-color: var(--line);
 }
 
 body[data-page="home"] .nav-toggle span {
-	background: var(--white);
+	background: var(--ink);
 }
 
 .header-inner {
@@ -203,6 +206,7 @@ body[data-page="home"] .nav-toggle span {
 	transform: translateY(-6px) rotate(-45deg);
 }
 
+/* The landing hero uses layered imagery and gradients to keep its copy readable. */
 .hero {
 	position: relative;
 	min-height: min(650px, 72vw);
@@ -339,6 +343,7 @@ body[data-page="home"] .nav-toggle span {
 	background: var(--white);
 }
 
+/* Shared section spacing and artwork cards are used on the home and portfolio pages. */
 .page-section {
 	padding-block: clamp(52px, 7vw, 88px);
 }
@@ -441,6 +446,7 @@ body[data-page="home"] .nav-toggle span {
 	margin-top: 8px;
 }
 
+/* Artist introduction and enquiry panel create two distinct calls to action. */
 .intro-section {
 	background: #efede7;
 }
@@ -529,6 +535,7 @@ body[data-page="home"] .nav-toggle span {
 	font-size: 14px;
 }
 
+/* Footer links and metadata form the shared site-wide closing navigation. */
 .site-footer {
 	padding-top: 27px;
 	background: var(--paper);
@@ -592,6 +599,7 @@ body[data-page="home"] .nav-toggle span {
 	min-height: 60vh;
 }
 
+/* Portfolio and artwork detail layouts build on the shared section spacing. */
 .portfolio-section,
 .artwork-section,
 .about-section,
@@ -633,6 +641,29 @@ body[data-page="home"] .nav-toggle span {
 	background: var(--green-dark);
 }
 
+.texture-studies-intro {
+	max-width: 760px;
+	margin-bottom: 28px;
+	padding: 18px 20px;
+	border-left: 2px solid var(--teal);
+	background: var(--white);
+}
+
+.texture-studies-intro h2 {
+	margin: 0;
+	font-family: var(--serif);
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.texture-studies-intro p {
+	margin: 8px 0 0;
+	color: var(--muted);
+	font-size: 13px;
+	line-height: 1.75;
+}
+
 .gallery-grid {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -665,11 +696,79 @@ body[data-page="home"] .nav-toggle span {
 	gap: clamp(32px, 6vw, 76px);
 }
 
+.artwork-image-viewport {
+	display: grid;
+	min-height: 300px;
+	max-height: 78vh;
+	place-items: center;
+	overflow: auto;
+	background: var(--paper-deep);
+}
+
 .artwork-main-image {
 	width: 100%;
 	max-height: 78vh;
 	object-fit: contain;
-	background: var(--paper-deep);
+	transform: scale(1);
+	transform-origin: center;
+	transition: transform 220ms ease;
+	will-change: transform;
+}
+
+.artwork-main-image.is-zoomed {
+	cursor: zoom-out;
+}
+
+.artwork-zoom-controls {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+.zoom-button,
+.zoom-reset {
+	min-width: 42px;
+	min-height: 42px;
+	padding: 8px 12px;
+	border: 1px solid var(--line);
+	border-radius: 2px;
+	color: var(--ink);
+	background: var(--white);
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color var(--ease), border-color var(--ease), color var(--ease);
+	touch-action: manipulation;
+}
+
+.zoom-reset {
+	font-size: 11px;
+}
+
+.zoom-button:hover:not(:disabled),
+.zoom-reset:hover {
+	border-color: var(--green-dark);
+	color: var(--white);
+	background: var(--green-dark);
+}
+
+.zoom-button:disabled {
+	color: #8b908c;
+	cursor: not-allowed;
+}
+
+.zoom-level {
+	min-width: 52px;
+	color: var(--muted);
+	font-size: 12px;
+	text-align: center;
+	font-variant-numeric: tabular-nums;
+}
+
+.zoom-hint {
+	margin: 8px 0 0;
+	color: var(--muted);
+	font-size: 11px;
 }
 
 .artwork-details {
@@ -766,6 +865,7 @@ body[data-page="home"] .nav-toggle span {
 	color: var(--muted);
 }
 
+/* Biography and CV layouts arrange longer-form artist information. */
 .about-grid {
 	display: grid;
 	grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
@@ -864,6 +964,7 @@ body[data-page="home"] .nav-toggle span {
 	font-size: 13px;
 }
 
+/* Biography calls to action stay grouped and wrap when the available width is narrow. */
 .about-actions {
 	display: flex;
 	flex-wrap: wrap;
@@ -871,6 +972,7 @@ body[data-page="home"] .nav-toggle span {
 	margin-top: 25px;
 }
 
+/* Contact page pairs direct contact details with an accessible enquiry form. */
 .contact-wrap {
 	display: grid;
 	grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
@@ -901,6 +1003,7 @@ body[data-page="home"] .nav-toggle span {
 	font-size: 17px;
 }
 
+/* Form labels, inputs, and inline feedback make validation state easy to scan. */
 .contact-form {
 	padding: 0;
 }
@@ -968,6 +1071,7 @@ body[data-page="home"] .nav-toggle span {
 	outline-offset: 3px;
 }
 
+/* Motion is intentionally brief and is disabled for visitors who request less motion. */
 @keyframes rise-in {
 	from {
 		opacity: 0;
@@ -979,6 +1083,7 @@ body[data-page="home"] .nav-toggle span {
 	}
 }
 
+/* Tablet adjustments create more room for content as the viewport narrows. */
 @media (max-width: 900px) {
 	.container {
 		width: min(var(--content), calc(100% - 42px));
@@ -1004,6 +1109,7 @@ body[data-page="home"] .nav-toggle span {
 	}
 }
 
+/* Mobile layout stacks content and exposes the collapsible navigation menu. */
 @media (max-width: 680px) {
 	.container {
 		width: calc(100% - 36px);
@@ -1191,6 +1297,11 @@ body[data-page="home"] .nav-toggle span {
 		max-height: none;
 	}
 
+	.artwork-image-viewport {
+		min-height: 240px;
+		max-height: 70vh;
+	}
+
 	.related-grid {
 		gap: 8px;
 	}
@@ -1209,6 +1320,7 @@ body[data-page="home"] .nav-toggle span {
 	}
 }
 
+/* Very narrow screens use single-column artwork cards and compact page gutters. */
 @media (max-width: 390px) {
 	.container {
 		width: calc(100% - 28px);
@@ -1234,6 +1346,7 @@ body[data-page="home"] .nav-toggle span {
 	}
 }
 
+/* Respect the operating system accessibility preference to reduce animation. */
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;

@@ -29,4 +29,4 @@ server. There is no build or installation step.
 - Artwork details are maintained in the `artworkData` collection in `js/main.js`.
 - The contact form validates fields in the browser and opens the visitor's email
   application; it does not submit data to a server.
-- Artwork enquiries use [34feetart@gmail.com](mailto:34feetart@gmail.com).
+- Artwork enquiries use [d.akuamoah2018@gmail.com](mailto:d.akuamoah2018@gmail.com).

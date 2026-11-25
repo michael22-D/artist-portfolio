@@ -1,5 +1,8 @@
-const artistEmail = '34feetart@gmail.com';
+// Shared contact destination used by artwork enquiries and the contact form.
+const artistEmail = 'd.akuamoah2018@gmail.com';
 
+// Artwork records power the featured cards, filtered gallery, and detail pages.
+// Each record keeps presentation data together so page templates stay data-driven.
 const artworkData = [
   {
     id: 'artwork-01',
@@ -111,12 +114,16 @@ const artworkData = [
   }
 ];
 
+// Find one artwork record by the ID supplied in an artwork detail-page URL.
 const getArtworkById = (id) => artworkData.find((artwork) => artwork.id === id);
 
+// Populate the home page's featured grid when that page's target element exists.
 const renderFeaturedWorks = () => {
   const featuredGrid = document.getElementById('featuredGrid');
+  // Other pages do not contain this target, so they need no featured-card work.
   if (!featuredGrid) return;
 
+  // Keep the landing page focused by using only the first three collection entries.
   featuredGrid.innerHTML = artworkData.slice(0, 3).map((artwork) => `
     <article class="art-card">
       <div class="art-image-wrap">
@@ -133,17 +140,26 @@ const renderFeaturedWorks = () => {
   `).join('');
 };
 
+// Build category controls and matching artwork cards for the portfolio page.
 const renderGallery = () => {
   const galleryGrid = document.getElementById('galleryGrid');
   const galleryEmptyState = document.getElementById('galleryEmptyState');
   const galleryFilters = document.getElementById('galleryFilters');
+  const textureStudiesIntro = document.getElementById('textureStudiesIntro');
+  // Skip gallery setup on pages without the gallery container.
   if (!galleryGrid) return;
 
   const filterOptions = ['All Works', 'Abstract Figures', 'Colour Studies', 'Mixed Media'];
+  // Derive categories from the data so new artwork categories appear automatically.
   const categories = [...new Set(artworkData.filter((artwork) => artwork.category).map((artwork) => artwork.category))];
   const activeCategory = galleryFilters && galleryFilters.dataset.active ? galleryFilters.dataset.active : 'All Works';
 
+  if (textureStudiesIntro) {
+    textureStudiesIntro.classList.toggle('hidden', activeCategory !== 'Texture Studies');
+  }
+
   if (galleryFilters) {
+    // Rebuild filter buttons from the available categories and mark the active choice.
     const availableOptions = ['All Works', ...categories];
     galleryFilters.innerHTML = availableOptions.map((option) => `
       <button
@@ -169,6 +185,7 @@ const renderGallery = () => {
     return artwork.category === activeCategory;
   });
 
+  // Show an explicit empty message if future filters can produce no matching works.
   if (!filteredArtworks.length) {
     galleryGrid.innerHTML = '';
     galleryEmptyState?.classList.remove('hidden');
@@ -193,10 +210,13 @@ const renderGallery = () => {
   galleryEmptyState?.classList.add('hidden');
 };
 
+// Render the requested artwork, or a helpful return link when its ID is invalid.
 const renderArtworkDetail = () => {
   const artworkContent = document.getElementById('artworkContent');
+  // The detail template is only present on artwork.html.
   if (!artworkContent) return;
 
+  // Read the selected record from the query string, e.g. artwork.html?id=artwork-01.
   const params = new URLSearchParams(window.location.search);
   const artworkId = params.get('id');
   const artwork = getArtworkById(artworkId);
@@ -214,10 +234,20 @@ const renderArtworkDetail = () => {
 
   const relatedArtworks = artworkData.filter((item) => item.id !== artwork.id).slice(0, 3);
 
+  // Insert the selected work's details and a small set of alternative works.
   artworkContent.innerHTML = `
     <article class="artwork-layout">
-      <div>
-        <img src="${artwork.image}" alt="${artwork.alt}" class="artwork-main-image" />
+      <div class="artwork-visual">
+        <div class="artwork-image-viewport">
+          <img src="${artwork.image}" alt="${artwork.alt}" class="artwork-main-image" />
+        </div>
+        <div class="artwork-zoom-controls" role="group" aria-label="Artwork image zoom controls">
+          <button type="button" class="zoom-button" data-zoom="out" aria-label="Zoom out" disabled>−</button>
+          <span class="zoom-level" aria-live="polite">100%</span>
+          <button type="button" class="zoom-button" data-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" class="zoom-reset" data-zoom="reset">Reset</button>
+        </div>
+        <p class="zoom-hint">Use the controls to zoom in and inspect the artwork.</p>
       </div>
       <aside class="artwork-details">
         <a href="portfolio.html" class="breadcrumb">Back to Portfolio</a>
@@ -244,14 +274,46 @@ const renderArtworkDetail = () => {
       `).join('')}
     </div>
   `;
+
+  initializeArtworkZoom(artworkContent);
 };
 
+// Provide touch-friendly zoom controls for the selected artwork image.
+const initializeArtworkZoom = (artworkContent) => {
+  const image = artworkContent.querySelector('.artwork-main-image');
+  const zoomOutButton = artworkContent.querySelector('[data-zoom="out"]');
+  const zoomInButton = artworkContent.querySelector('[data-zoom="in"]');
+  const resetButton = artworkContent.querySelector('[data-zoom="reset"]');
+  const zoomLevel = artworkContent.querySelector('.zoom-level');
+  if (!image || !zoomOutButton || !zoomInButton || !resetButton || !zoomLevel) return;
+
+  const minimumZoom = 1;
+  const maximumZoom = 3;
+  const zoomStep = 0.25;
+  let currentZoom = minimumZoom;
+
+  const updateZoom = (nextZoom) => {
+    currentZoom = Math.min(maximumZoom, Math.max(minimumZoom, nextZoom));
+    image.style.transform = `scale(${currentZoom})`;
+    image.classList.toggle('is-zoomed', currentZoom > minimumZoom);
+    zoomLevel.textContent = `${Math.round(currentZoom * 100)}%`;
+    zoomOutButton.disabled = currentZoom === minimumZoom;
+    zoomInButton.disabled = currentZoom === maximumZoom;
+  };
+
+  zoomOutButton.addEventListener('click', () => updateZoom(currentZoom - zoomStep));
+  zoomInButton.addEventListener('click', () => updateZoom(currentZoom + zoomStep));
+  resetButton.addEventListener('click', () => updateZoom(minimumZoom));
+};
+
+// Keep the compact navigation button, menu visibility, and accessibility state in sync.
 const initializeNavigation = () => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
   if (!toggle || !nav) return;
 
   const closeMenu = () => {
+    // Keep the visual menu state and screen-reader state synchronized.
     toggle.setAttribute('aria-expanded', 'false');
     nav.classList.remove('is-open');
   };
@@ -273,6 +335,7 @@ const initializeNavigation = () => {
   });
 };
 
+// Validate the enquiry form in the browser, then prepare an email for the visitor.
 const initializeContactForm = () => {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -286,6 +349,7 @@ const initializeContactForm = () => {
   };
 
   const clearErrors = () => {
+    // Remove stale field messages and any summary before validating a new submission.
     ['name', 'email', 'subject', 'message'].forEach((fieldId) => setError(fieldId, ''));
     if (summary) {
       summary.classList.add('hidden');
@@ -303,6 +367,7 @@ const initializeContactForm = () => {
     const subject = String(formData.get('subject') || '').trim();
     const message = String(formData.get('message') || '').trim();
 
+    // Collect all invalid fields so visitors can correct them in one pass.
     const errors = [];
 
     if (!name) {
@@ -338,6 +403,7 @@ const initializeContactForm = () => {
 
     const mailtoLink = `mailto:${artistEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
+    // The static site has no server endpoint; hand the prepared enquiry to the visitor's email app.
     if (summary) {
       summary.classList.remove('hidden');
       summary.textContent = 'Your email application is opening with a prepared message. Please send it to complete the enquiry.';
@@ -347,6 +413,7 @@ const initializeContactForm = () => {
   });
 };
 
+// Initialize only the features whose page-specific elements are present.
 const initializePage = () => {
   renderFeaturedWorks();
   renderGallery();
@@ -355,4 +422,5 @@ const initializePage = () => {
   initializeContactForm();
 };
 
+// Wait until page markup exists before querying elements and attaching behaviors.
 document.addEventListener('DOMContentLoaded', initializePage);

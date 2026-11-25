@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Page metadata and shared styling for the artist portfolio. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="portfolio">
+    <!-- Shared brand header and primary navigation. -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand" aria-label="Derrick Akuamoah home page">
@@ -36,12 +38,13 @@
           <a href="about.html" class="nav-link">About</a>
           <a href="cv.html" class="nav-link">CV</a>
           <a href="contact.html" class="nav-link">Contact</a>
-          <a href="mailto:34feetart@gmail.com" class="nav-email" aria-label="Email Derrick Akuamoah">✉</a>
+          <a href="mailto:d.akuamoah2018@gmail.com" class="nav-email" aria-label="Email Derrick Akuamoah">✉</a>
         </nav>
       </div>
     </header>
 
     <main class="page-shell">
+      <!-- Gallery filter controls and results are populated from the artwork collection. -->
       <section class="page-section portfolio-section">
         <div class="container">
           <div class="section-head section-head-compact">
@@ -52,6 +55,18 @@
           </div>
 
           <div id="galleryFilters" class="filter-bar" aria-label="Artwork filters"></div>
+          <section
+            id="textureStudiesIntro"
+            class="texture-studies-intro hidden"
+            aria-labelledby="textureStudiesHeading"
+          >
+            <h2 id="textureStudiesHeading">About the Texture Studies</h2>
+            <p>
+              This series explores the stories held in overlooked surfaces. Through close observation
+              of weathered materials, layered marks, colour, and wear, the works trace how time,
+              movement, and human presence shape the textures around us.
+            </p>
+          </section>
           <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
           <div id="galleryEmptyState" class="empty-state hidden" aria-live="polite">
             No works match this selection.
@@ -60,6 +75,7 @@
       </section>
     </main>
 
+    <!-- Shared footer provides secondary page links and artist details. -->
     <footer class="site-footer">
       <div class="container footer-inner">
         <div>
@@ -72,7 +88,7 @@
           <a href="about.html">About</a>
           <a href="cv.html">CV</a>
           <a href="contact.html">Contact</a>
-          <a href="mailto:34feetart@gmail.com">Email</a>
+          <a href="mailto:d.akuamoah2018@gmail.com">Email</a>
         </div>
         <div class="footer-social" aria-label="Social media links">
           <a href="#" aria-label="Instagram">◎</a>
@@ -86,6 +102,7 @@
       </div>
     </footer>
 
+    <!-- Loads gallery rendering and shared navigation behavior. -->
     <script src="js/main.js?v=2"></script>
   </body>
 </html>
