@@ -36,21 +36,33 @@ const artworkData = [
     medium: 'Acrylic on Canvas',
     dimensions: '122 x 122 cm',
     year: '2026',
-    category: 'Mixed Media',
+    category: 'Abstract Figures',
     availability: 'Available for enquiry',
     alt: 'Mixed media abstract painting with bold textures and warm and cool tones'
   },
   {
-    id: 'artwork-04',
-    title: 'Untitled Study 04',
-    image: 'img/5.jpeg',
-    description: 'Placeholder description for this sample abstract work. Update this text with the artist’s written notes when available.',
-    medium: 'Acrylic on canvas',
-    dimensions: '100 x 80 cm',
-    year: '2023',
+    id: 'artwork-16',
+    title: 'Black Mass',
+    image: 'img/black mass.jpeg',
+    description: 'Acrylic painting exploring a monumental black form amid expressive figures and energetic marks.',
+    medium: 'Acrylic on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
     category: 'Abstract Figures',
     availability: 'Available for enquiry',
-    alt: 'Abstract composition using vivid strokes and scattered marks in vibrant blues and oranges'
+    alt: 'A large black painted form rises above small expressive figures on a yellow and green ground'
+  },
+  {
+    id: 'artwork-17',
+    title: 'Field of Signals',
+    image: 'img/Field Of signals.jpeg',
+    description: 'A densely layered field of black, white, and yellow marks built through mixed-media gestures.',
+    medium: 'Mixed Media on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
+    category: 'Mixed Media',
+    availability: 'Available for enquiry',
+    alt: 'Dense black, white, and yellow abstract marks layered across a square canvas'
   },
   {
     id: 'artwork-05',
@@ -183,30 +195,6 @@ const artworkData = [
     category: 'Texture Studies',
     availability: 'Available for enquiry',
     alt: 'Scratched white painted metal panel with rust and industrial seams'
-  },
-  {
-    id: 'artwork-16',
-    title: 'Black Mass',
-    image: 'img/black mass.jpeg',
-    description: 'Acrylic painting exploring a monumental black form amid expressive figures and energetic marks.',
-    medium: 'Acrylic on Canvas',
-    dimensions: '122 x 122 cm',
-    year: '2026',
-    category: 'Abstract Figures',
-    availability: 'Available for enquiry',
-    alt: 'A large black painted form rises above small expressive figures on a yellow and green ground'
-  },
-  {
-    id: 'artwork-17',
-    title: 'Field of Signals',
-    image: 'img/Field Of signals.jpeg',
-    description: 'A densely layered field of black, white, and yellow marks built through mixed-media gestures.',
-    medium: 'Mixed Media on Canvas',
-    dimensions: '122 x 122 cm',
-    year: '2026',
-    category: 'Mixed Media',
-    availability: 'Available for enquiry',
-    alt: 'Dense black, white, and yellow abstract marks layered across a square canvas'
   }
 ];
 
