@@ -111,6 +111,102 @@ const artworkData = [
     category: 'Texture Studies',
     availability: 'Available for enquiry',
     alt: 'Close-up of a weathered metal post with rust against a warm, neutral wall'
+  },
+  {
+    id: 'artwork-10',
+    title: 'Texture Study 10',
+    image: 'img/texture img1.jpeg',
+    description: 'A close-up study of scratched paint and exposed rust on a weathered vehicle panel.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Weathered vehicle door and window covered in rust, scratched paint, and layered marks'
+  },
+  {
+    id: 'artwork-11',
+    title: 'Texture Study 11',
+    image: 'img/texture img2.jpeg',
+    description: 'A close-up study of peeling paint, rust, and torn metal in an urban environment.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Rusted yellow and orange metal surface with peeling paint and exposed panels'
+  },
+  {
+    id: 'artwork-12',
+    title: 'Texture Study 12',
+    image: 'img/texture img3.jpeg',
+    description: 'An overhead study of intersecting tyre tracks and footprints across sandy ground.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Sand marked with overlapping tyre tracks and footprints'
+  },
+  {
+    id: 'artwork-13',
+    title: 'Texture Study 13',
+    image: 'img/texture img4.jpeg',
+    description: 'A study of corroded blue metal, running rust, and a strip of weathered yellow paint.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Blue weathered metal with rust streaks and a yellow painted lower edge'
+  },
+  {
+    id: 'artwork-14',
+    title: 'Texture Study 14',
+    image: 'img/texture img5.jpeg',
+    description: 'An abstract close-up study of tangled dark marks and rust stains on a pale surface.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Pale textured surface crossed by dense dark, rust-coloured marks'
+  },
+  {
+    id: 'artwork-15',
+    title: 'Texture Study 15',
+    image: 'img/texture img6.jpeg',
+    description: 'A close-up study of scratched white paint, rust, and industrial metal seams.',
+    medium: 'Photographic study',
+    dimensions: 'Details on enquiry',
+    year: 'Not specified',
+    category: 'Texture Studies',
+    availability: 'Available for enquiry',
+    alt: 'Scratched white painted metal panel with rust and industrial seams'
+  },
+  {
+    id: 'artwork-16',
+    title: 'Black Mass',
+    image: 'img/black mass.jpeg',
+    description: 'Acrylic painting exploring a monumental black form amid expressive figures and energetic marks.',
+    medium: 'Acrylic on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
+    category: 'Abstract Figures',
+    availability: 'Available for enquiry',
+    alt: 'A large black painted form rises above small expressive figures on a yellow and green ground'
+  },
+  {
+    id: 'artwork-17',
+    title: 'Field of Signals',
+    image: 'img/Field Of signals.jpeg',
+    description: 'A densely layered field of black, white, and yellow marks built through mixed-media gestures.',
+    medium: 'Mixed Media on Canvas',
+    dimensions: '122 x 122 cm',
+    year: '2026',
+    category: 'Mixed Media',
+    availability: 'Available for enquiry',
+    alt: 'Dense black, white, and yellow abstract marks layered across a square canvas'
   }
 ];
 
